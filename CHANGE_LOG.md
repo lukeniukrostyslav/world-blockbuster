@@ -101,3 +101,14 @@ B9 — следующий этап.
 - MASTER_BLOCK_STATUS.md — f5d7221cee05845572495e34d42bc978c0faefbd
 - PROJECT_STATE.md — 924f4d5abca45e791d5f64d9a7c8efde5a5a4720
 - DECISION_LOG.md — 057c5893356749865dc53679321954ff0c13faf8
+
+
+## 2026-09-22 — B14 Chapter 1
+Написана глава 1 «Город, который ничего не забывает». Подготовлен Chapter Brief, выполнены Draft, Literary QA, Continuity QA, Mystery QA, Paragraph QA и технический Word Count. Итоговый объём: **2300 слов**.
+
+Фактические commit SHA B14:
+- CHAPTER_01_BRIEF.md — c765981c089e719b686d23f684039e8f78f6e097
+- CHAPTER_01.md (последний текст) — a1772af51be53a1c836c942f5b9e59787259c43e
+- CHAPTER_01_QA.md — ca17a665ef265bbb2d49609161c9ec3e466f031f
+
+Статус B14: **2.7%** — завершена 1 из 37 производственных единиц (36 глав + эпилог).

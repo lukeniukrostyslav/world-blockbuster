@@ -12,12 +12,15 @@
 Утверждена концепция:
 **«Город, который забывает людей»**
 
-Фактические commit SHA:
-- B4_CONCEPT_SELECTION.md — 9365585eb1105e01aeefc4194854ef8c9d103140
-- MASTER_BLOCK_STATUS.md — 0598ca9f38db990b1d5e6d78fde87cdc134262eb
-- PROJECT_STATE.md — c92b91169d43123136e860f0e969f8dabd37c09b
-- DECISION_LOG.md — db62e3450cf5536acee9f07c53f9eb2b825e792d
+## 2026-09-22 — B5 Thematic Core
+Зафиксировано тематическое ядро: память как форма человеческой связи. Определены центральный человеческий вопрос, контртема, эмоциональная дуга, внутренний и внешний конфликт, этическое напряжение и эмоциональная цена.
+
+Фактические commit SHA B5:
+- THEMATIC_CORE.md — ea660a3191a4e89c2a154993634ee181fbfe6c60
+- MASTER_BLOCK_STATUS.md — 6af02261ef632b9ce01f0b35c8a231f7cc01d8ee
+- PROJECT_STATE.md — ec2a507142da25c0c405d3b9eeb924a9fd847d4c
+- DECISION_LOG.md — cd6e0bf3df4a692e4c1602e5f6451de067d42e66
 
 ## Статус
-B0–B4 завершены.
-B5 — следующий этап.
+B0–B5 завершены.
+B6 — следующий этап.

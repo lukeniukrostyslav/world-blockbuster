@@ -57,3 +57,13 @@ B9 — следующий этап.
 - MASTER_BLOCK_STATUS.md — b0cf0ae9823d7661c18fbc4dfc89d98318beb36d
 - PROJECT_STATE.md — 4d8203d95b6e0513c72d37179407da0702146cb3
 - DECISION_LOG.md — 1a3d40f61d2832b21aea0c8382daaff08cb1814e
+
+
+## 2026-09-22 — B10 Full Chapter Architecture
+Создана полная архитектура первой книги: 36 глав + эпилог. Для каждой главы зафиксирована драматическая функция, изменение ситуации и место в общей дуге от обычной жизни через расследование и цену вмешательства к кульминационному выбору и эмоциональному завершению.
+
+Фактические commit SHA B10:
+- CHAPTER_ARCHITECTURE.md — 30b7a35fcfdc6c145235bfa866fa7574ff55afc3
+- MASTER_BLOCK_STATUS.md — 71629e843b5e7d1a349a55a575d636755943a0fc
+- PROJECT_STATE.md — fda508ed38d0902b22e9144037fcaf19027e8ddb
+- DECISION_LOG.md — 35d903293cc0de94ece5e9ed01af32cb72e1e882

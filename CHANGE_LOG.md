@@ -77,3 +77,15 @@ B9 — следующий этап.
 - MASTER_BLOCK_STATUS.md — 4affbef8da6ac729c93c0e69cc3ca17d32995b95
 - PROJECT_STATE.md — 12e5a1b8c507d66e29a676e3e13e62771c78dcff
 - DECISION_LOG.md — 07c1fcae163091a3d25b64590e07991800da7ea8
+
+
+## 2026-09-22 — B12 Literary Bible
+Созданы и закреплены CHARACTER_BIBLE.md, WORLD_BIBLE.md и WORLD_RULES.md. Зафиксированы 20 основных персонажей, рабочая география Воронца, ключевые места, канонические правила мира и Fair Play.
+
+Фактические commit SHA B12:
+- CHARACTER_BIBLE.md — f49378eaab29baad85f5f3671c41b2f640d3f4f6
+- WORLD_BIBLE.md — 4014064be3515cae3a1706e04d6927189f684494
+- WORLD_RULES.md — 376466b09ef114391d4f1a5ab27692ee28bbf479
+- MASTER_BLOCK_STATUS.md — e70b5f8f829a028bc504911657bbb71e8c161673
+- PROJECT_STATE.md — 44f81dd9a1cf8d4aed54252dbe1adf256bf5a73b
+- DECISION_LOG.md — 41443ecd727f5578b3d73c9bfc17959620ec428f

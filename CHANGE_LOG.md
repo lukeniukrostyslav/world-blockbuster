@@ -67,3 +67,13 @@ B9 — следующий этап.
 - MASTER_BLOCK_STATUS.md — 71629e843b5e7d1a349a55a575d636755943a0fc
 - PROJECT_STATE.md — fda508ed38d0902b22e9144037fcaf19027e8ddb
 - DECISION_LOG.md — 35d903293cc0de94ece5e9ed01af32cb72e1e882
+
+
+## 2026-09-22 — B11 Scene Plan
+Создан подробный сценический каркас для всех 36 глав и эпилога. Каждая сцена проверяется по месту, времени, персонажам, цели, препятствию, действию, новой информации, реакции, изменению и переходу. Зафиксировано правило: сцена должна что-то менять.
+
+Фактические commit SHA B11:
+- SCENE_PLAN.md — 1e588367195f1cf8c8adf184a5811d62228965bc
+- MASTER_BLOCK_STATUS.md — 4affbef8da6ac729c93c0e69cc3ca17d32995b95
+- PROJECT_STATE.md — 12e5a1b8c507d66e29a676e3e13e62771c78dcff
+- DECISION_LOG.md — 07c1fcae163091a3d25b64590e07991800da7ea8

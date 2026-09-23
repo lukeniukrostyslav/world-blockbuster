@@ -74,3 +74,6 @@ B22 audit commit: 21562fe378709857f16a91725a4d40e343869e8f
 
 
 B22 completed at 100%. Final literary-editing pass completed through chapters 31–36 and the epilogue. No substantive rewrites were justified; anti-telegraph, paragraph integrity, dialogue rhythm, repetition, sensory detail, emotional continuity and final ending marker were verified. Audit commit: cc0f9ab82f4c727cc10e3bd38b364344154aed81.
+
+
+B23 — Эмоциональная редактура: 25%. Создан docs/B23_EMOTIONAL_EDITING.md. Проведён первый эмоциональный проход по главам 1–2: проверены эмоциональная дуга Alex, раннее формирование связи с Maya, начало соперничества с Adrian, социальный вход через Leo/Nora и эмоциональная значимость Border House. Существенных исправлений на этом участке не требуется.

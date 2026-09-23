@@ -12,7 +12,7 @@ B20.5 — 100%
 B20.6 — WORLD LIFE / BLOCKBUSTER AUDIT: 100%
 
 B21 — 100%
-B22 — 45%
+B22 — 55%
 B23 — 0%
 B24 — 0%
 B25 — 0%
@@ -63,3 +63,7 @@ B22 progress update: 40%. Contextual anti-telegraph editing completed for chapte
 B22 progress update: 45%. Chapters 18–19 fully checked. Chapter 18 had a duplicated continuation after the completed scene; the duplicate was removed without changing the intended ending. Chapter 19 was checked contextually; no mechanical paragraph merges were made. Chapter 19 retained natural dialogue/short emotional beats.
 B22 chapter 18 fix commit: da969c31e4cb04c24c0249e1285d355e38c3eaaf
 B22 audit update commit: 2059b8d22498114fb08ae97182f1a700b1f71270
+
+
+B22 progress update: 55%. Completed contextual literary pass for chapters 20–22. No manuscript changes were needed in these chapters; dialogue fragments and short accents were retained where they serve rhythm. Chapter 18 duplicate-continuation fix remains the only substantive correction in the 18–22 segment.
+B22 audit commit: 3edf1297b409f457bafa45144c9d878bdbc7f0d5

@@ -13,7 +13,7 @@ B20.6 — WORLD LIFE / BLOCKBUSTER AUDIT: 100%
 
 B21 — 100%
 B22 — 100%
-B23 — 60%
+B23 — 100%
 B24 — 0%
 B25 — 0%
 
@@ -81,3 +81,6 @@ B23 — Эмоциональная редактура: 60%. Создан docs/B2
 B23 update: chapters 3–12 emotionally audited. Checked Alex's internal change, Maya friendship, Alex/Adrian rivalry, Leo's humor/vulnerability, Nora's fact-vs-hypothesis discipline, Border House belonging, family-letter scenes and emotional contrast between ordinary life and mystery. No substantive rewrites justified. Audit commit: 7daf2b7dfeddf1255c0dcfb6f1d0e6e0448d3054.
 
 B23 update: chapters 13–22 emotionally audited. Checked festival/belonging, uncertainty and trust, Alex/Maya joint investigation, Alex's calculation error, consequences of the first violation, punishment, friendship conflict, Adrian's independent evidence, Leo's social-source role, and Alex's changed response to a wrong conclusion. No substantive rewrites justified. Audit commit: 78c2fae2908d4470627b57a7fe6c0fbfa5e68e67.
+
+
+B23 completed: full emotional editing pass completed through chapters 23–36 and epilogue. Checked Alex's emotional arc, Maya friendship, Alex/Adrian rivalry and respect, Nora/Leo independent emotional roles, Border House belonging, consequences of fear/errors/rule violation, ordinary-life contrast, climax group trust, chapter 36 emotional closure and epilogue continuation. No substantive rewrites justified. B23 audit commit: e4a64ec6afe1650f1eff0a33d69ab3ddc796f4c6.

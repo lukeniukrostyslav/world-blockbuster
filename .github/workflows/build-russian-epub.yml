@@ -2,106 +2,78 @@ name: Build Russian EPUB
 
 on:
   push:
-    branches: [main]
+    branches:
+      - main
   workflow_dispatch:
 
-permissions:
-  contents: read
-
 jobs:
-  build-epub:
+  build:
     runs-on: ubuntu-latest
     steps:
-      - name: Checkout
-        uses: actions/checkout@v4
+      - uses: actions/checkout@v4
 
       - name: Build EPUB
-        shell: python {0}
         run: |
-          import re, zipfile, uuid
+          python3 - <<'PY'
           from pathlib import Path
+          import re, zipfile
           from xml.sax.saxutils import escape
 
           root = Path(".")
-          out = root / "world-blockbuster-russian.epub"
-
-          chapter_files = sorted((root / "chapters").glob("*.md"))
-          chapter_files.sort(key=lambda p: int(re.match(r"(\d+)", p.name).group(1)))
-          epilogue = root / "EPILOGUE_SECOND_ROUTE.md"
-
-          if len(chapter_files) != 36:
-              raise SystemExit(f"Expected 36 chapters, found {len(chapter_files)}")
-          if not epilogue.exists():
+          chapters = sorted((root / "chapters").glob("*.md"), key=lambda p: int(re.match(r"^(\d+)", p.name).group(1)))
+          if len(chapters) != 36:
+              raise SystemExit(f"Expected 36 chapters, found {len(chapters)}")
+          ep = root / "EPILOGUE_SECOND_ROUTE.md"
+          if not ep.exists():
               raise SystemExit("Missing epilogue")
 
-          def md_to_html(text):
-              text = re.sub(r"^# (.+)$", r"<h1>\\1</h1>", text, flags=re.M)
-              text = re.sub(r"^## (.+)$", r"<h2>\\1</h2>", text, flags=re.M)
-              text = text.replace("**Конец книги первой.**", "<p class='end'><strong>Конец книги первой.</strong></p>")
-              blocks = re.split(r"\n\s*\n", text.strip())
-              out = []
-              for b in blocks:
-                  b = b.strip()
-                  if not b:
+          def render(md, label):
+              parts = re.split(r"\n\s*\n", md.strip())
+              out = [f"<h1>{escape(label)}</h1>"]
+              for p in parts:
+                  p = p.strip()
+                  if not p:
                       continue
-                  if b.startswith("<h1>") or b.startswith("<h2>") or b.startswith("<p class='end'>"):
-                      out.append(b)
-                  elif b.startswith("—") or re.match(r"^—", b):
-                      out.append("<p class='dialogue'>" + escape(re.sub(r"\\*\\*", "", b)) + "</p>")
+                  p = p.replace("**Конец книги первой.**", "<strong>Конец книги первой.</strong>")
+                  if p.startswith("**") and p.endswith("**"):
+                      out.append("<p class='end'><strong>" + escape(p[2:-2]) + "</strong></p>")
                   else:
-                      out.append("<p>" + escape(b).replace("&lt;strong&gt;", "<strong>").replace("&lt;/strong&gt;", "</strong>") + "</p>")
+                      out.append("<p>" + escape(p).replace("&lt;strong&gt;", "<strong>").replace("&lt;/strong&gt;", "</strong>") + "</p>")
               return "\n".join(out)
 
-          title = "Дом границ"
-          author = "Rostyslav Lukeniuk"
-          uid = "world-blockbuster-russian-2026"
-
-          files = [("01", p) for p in chapter_files]
-          files.append(("epilogue", epilogue))
-
-          with zipfile.ZipFile(out, "w", zipfile.ZIP_DEFLATED) as z:
+          out = root / "world-blockbuster-russian.epub"
+          with zipfile.ZipFile(out, "w") as z:
               z.writestr("mimetype", "application/epub+zip", compress_type=zipfile.ZIP_STORED)
               z.writestr("META-INF/container.xml", '''<?xml version="1.0" encoding="UTF-8"?>
-<container version="1.0" xmlns="urn:oasis:names:tc:opendocument:xmlns:container">
-  <rootfiles><rootfile full-path="OEBPS/content.opf" media-type="application/oebps-package+xml"/></rootfiles>
-</container>''')
-              z.writestr("OEBPS/style.css", """body{font-family:serif;line-height:1.5;margin:8%;}h1{text-align:center;margin:2em 0 1em;}h2{text-align:center;}p{text-indent:1.25em;margin:0 0 .8em;orphans:2;widows:2;}p.dialogue{text-indent:0;margin-left:1em;}p.end{text-align:center;text-indent:0;margin-top:3em;}""")
-
+          <container version="1.0" xmlns="urn:oasis:names:tc:opendocument:xmlns:container">
+            <rootfiles><rootfile full-path="OEBPS/content.opf" media-type="application/oebps-package+xml"/></rootfiles>
+          </container>''')
+              z.writestr("OEBPS/style.css", "body{font-family:serif;line-height:1.5;margin:8%;}h1{text-align:center;margin:2em 0 1em;}p{text-indent:1.25em;margin:0 0 .8em;orphans:2;widows:2;}p.end{text-align:center;text-indent:0;margin-top:3em;}")
               manifest = ['<item id="css" href="style.css" media-type="text/css"/>']
               spine = []
-              nav_points = []
-              for i,(num,p) in enumerate(files,1):
-                  href=f"text/{num}.xhtml"
-                  item_id=f"item{i}"
-                  manifest.append(f'<item id="{item_id}" href="{href}" media-type="application/xhtml+xml"/>')
-                  spine.append(f'<itemref idref="{item_id}"/>')
-                  label = "Эпилог" if num=="epilogue" else f"Глава {int(num)}"
-                  nav_points.append(f'<li><a href="{href}">{label}</a></li>')
-                  html=md_to_html(p.read_text(encoding="utf-8"))
-                  page=f'''<?xml version="1.0" encoding="UTF-8"?>
-<html xmlns="http://www.w3.org/1999/xhtml" lang="ru" xml:lang="ru"><head><title>{escape(label)}</title><link rel="stylesheet" type="text/css" href="../style.css"/></head><body>{html}</body></html>'''
-                  z.writestr(href,page)
-
-              manifest_xml="\n".join(manifest)
-              spine_xml="\n".join(spine)
-              opf=f'''<?xml version="1.0" encoding="UTF-8"?>
-<package xmlns="http://www.idpf.org/2007/opf" version="3.0" unique-identifier="book-id" xml:lang="ru">
-<metadata xmlns:dc="http://purl.org/dc/elements/1.1/">
-<dc:identifier id="book-id">{uid}</dc:identifier>
-<dc:title>{title}</dc:title><dc:language>ru</dc:language><dc:creator>{author}</dc:creator>
-<meta property="dcterms:modified">2026-09-23T00:00:00Z</meta>
-</metadata>
-<manifest>{manifest_xml}<item id="nav" properties="nav" href="nav.xhtml" media-type="application/xhtml+xml"/></manifest>
-<spine>{spine_xml}</spine>
-</package>'''
-              z.writestr("OEBPS/content.opf",opf)
-              nav=f'''<?xml version="1.0" encoding="UTF-8"?>
-<html xmlns="http://www.w3.org/1999/xhtml" xmlns:epub="http://www.idpf.org/2007/ops" lang="ru"><head><title>Содержание</title></head><body><nav epub:type="toc" id="toc"><h1>Содержание</h1><ol>{''.join(nav_points)}</ol></nav></body></html>'''
-              z.writestr("OEBPS/nav.xhtml",nav)
-
+              nav = []
+              files = [(f"ch{i:02d}", p, f"Глава {i}") for i,p in enumerate(chapters,1)] + [("epilogue", ep, "Эпилог")]
+              for i,(fid,p,label) in enumerate(files):
+                  href = f"text/{fid}.xhtml"
+                  manifest.append(f'<item id="{fid}" href="{href}" media-type="application/xhtml+xml"/>')
+                  spine.append(f'<itemref idref="{fid}"/>')
+                  nav.append(f'<li><a href="{href}">{escape(label)}</a></li>')
+                  body = render(p.read_text(encoding="utf-8"), label)
+                  xhtml = f'''<?xml version="1.0" encoding="UTF-8"?>
+          <html xmlns="http://www.w3.org/1999/xhtml" lang="ru"><head><title>{escape(label)}</title><link rel="stylesheet" href="../style.css"/></head><body>{body}</body></html>'''
+                  z.writestr(href, xhtml)
+              opf = f'''<?xml version="1.0" encoding="UTF-8"?>
+          <package xmlns="http://www.idpf.org/2007/opf" version="3.0" unique-identifier="book-id" xml:lang="ru">
+          <metadata xmlns:dc="http://purl.org/dc/elements/1.1/"><dc:identifier id="book-id">world-blockbuster-russian-2026</dc:identifier><dc:title>Дом границ</dc:title><dc:language>ru</dc:language><dc:creator>Rostyslav Lukeniuk</dc:creator><meta property="dcterms:modified">2026-09-23T00:00:00Z</meta></metadata>
+          <manifest>{''.join(manifest)}<item id="nav" href="nav.xhtml" media-type="application/xhtml+xml" properties="nav"/></manifest>
+          <spine>{''.join(spine)}</spine></package>'''
+              z.writestr("OEBPS/content.opf", opf)
+              z.writestr("OEBPS/nav.xhtml", f'''<?xml version="1.0" encoding="UTF-8"?>
+          <html xmlns="http://www.w3.org/1999/xhtml" xmlns:epub="http://www.idpf.org/2007/ops" lang="ru"><head><title>Содержание</title></head><body><nav epub:type="toc"><h1>Содержание</h1><ol>{''.join(nav)}</ol></nav></body></html>''')
           print(out)
-      - name: Upload EPUB
-        uses: actions/upload-artifact@v4
+          PY
+
+      - uses: actions/upload-artifact@v4
         with:
           name: world-blockbuster-russian-epub
           path: world-blockbuster-russian.epub

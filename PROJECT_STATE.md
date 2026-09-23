@@ -12,7 +12,7 @@ B20.5 — 100%
 B20.6 — WORLD LIFE / BLOCKBUSTER AUDIT: 100%
 
 B21 — 100%
-B22 — 25%
+B22 — 40%
 B23 — 0%
 B24 — 0%
 B25 — 0%
@@ -55,3 +55,6 @@ B22 = 25%. Первый проход: главы 1–10 + адресная пр�
 
 B22 audit commit: 72c7e2b40f894a408ca25ce979f188d7477a8f8c
 B22 chapter 1 fix commit: 64013c9dfd3edb5ffdef606b34c427d8e078f276
+
+
+B22 progress update: 40%. Contextual anti-telegraph editing completed for chapters 16–17. Commits: 7c091bd25226d747fd1b4e0f7c871c810e967e3a; dbee2f58190409eb7d6c11b1b672652411fa2f40.

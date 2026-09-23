@@ -14,7 +14,7 @@ B20.6 — WORLD LIFE / BLOCKBUSTER AUDIT: 100%
 B21 — 100%
 B22 — 100%
 B23 — 100%
-B24 — 0%
+B24 — 25%
 B25 — 0%
 
 ## Последний проход B20.6
@@ -84,3 +84,9 @@ B23 update: chapters 13–22 emotionally audited. Checked festival/belonging, un
 
 
 B23 completed: full emotional editing pass completed through chapters 23–36 and epilogue. Checked Alex's emotional arc, Maya friendship, Alex/Adrian rivalry and respect, Nora/Leo independent emotional roles, Border House belonging, consequences of fear/errors/rule violation, ordinary-life contrast, climax group trust, chapter 36 emotional closure and epilogue continuation. No substantive rewrites justified. B23 audit commit: e4a64ec6afe1650f1eff0a33d69ab3ddc796f4c6.
+
+
+## B24 — КОММЕРЧЕСКАЯ РЕДАКТУРА
+
+B24 = 25%. Проведён коммерческий проход глав 1–12: проверены opening hook, вход в Border House, mystery hook, социальное удержание, Route Challenge, Door 42, баланс обычной жизни и тайны, ансамбль персонажей, forward pull и отсутствие необходимости в искусственных cliffhanger. Существенных переписываний глав 1–12 не требуется.
+B24 audit commit: 3a790c3a71884c96480a4d068e0092cb0fab11bd.

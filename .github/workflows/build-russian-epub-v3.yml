@@ -61,7 +61,7 @@ jobs:
                   body = render(p.read_text(encoding="utf-8"), label)
                   xhtml = f'''<?xml version="1.0" encoding="UTF-8"?>
           <html xmlns="http://www.w3.org/1999/xhtml" lang="ru"><head><title>{escape(label)}</title><link rel="stylesheet" href="../style.css"/></head><body>{body}</body></html>'''
-                  z.writestr(href, xhtml)
+                  z.writestr("OEBPS/" + href, xhtml)
               opf = f'''<?xml version="1.0" encoding="UTF-8"?>
           <package xmlns="http://www.idpf.org/2007/opf" version="3.0" unique-identifier="book-id" xml:lang="ru">
           <metadata xmlns:dc="http://purl.org/dc/elements/1.1/"><dc:identifier id="book-id">world-blockbuster-russian-2026</dc:identifier><dc:title>Дом границ</dc:title><dc:language>ru</dc:language><dc:creator>Rostyslav Lukeniuk</dc:creator><meta property="dcterms:modified">2026-09-23T00:00:00Z</meta></metadata>

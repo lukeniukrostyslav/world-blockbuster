@@ -13,7 +13,7 @@ B20.6 — WORLD LIFE / BLOCKBUSTER AUDIT: 100%
 
 B21 — 100%
 B22 — 100%
-B23 — 0%
+B23 — 60%
 B24 — 0%
 B25 — 0%
 
@@ -76,6 +76,8 @@ B22 audit commit: 21562fe378709857f16a91725a4d40e343869e8f
 B22 completed at 100%. Final literary-editing pass completed through chapters 31–36 and the epilogue. No substantive rewrites were justified; anti-telegraph, paragraph integrity, dialogue rhythm, repetition, sensory detail, emotional continuity and final ending marker were verified. Audit commit: cc0f9ab82f4c727cc10e3bd38b364344154aed81.
 
 
-B23 — Эмоциональная редактура: 45%. Создан docs/B23_EMOTIONAL_EDITING.md. Проведён первый эмоциональный проход по главам 1–2: проверены эмоциональная дуга Alex, раннее формирование связи с Maya, начало соперничества с Adrian, социальный вход через Leo/Nora и эмоциональная значимость Border House. Существенных исправлений на этом участке не требуется.
+B23 — Эмоциональная редактура: 60%. Создан docs/B23_EMOTIONAL_EDITING.md. Эмоциональный проход завершён по главам 1–22: проверены эмоциональная дуга Alex, развитие Maya/Adrian/Nora/Leo, дружба и соперничество, последствия ошибок и наказания, принадлежность к Border House, контраст обычной жизни и тайны. Существенных переписываний в главах 1–22 не требуется.
 
 B23 update: chapters 3–12 emotionally audited. Checked Alex's internal change, Maya friendship, Alex/Adrian rivalry, Leo's humor/vulnerability, Nora's fact-vs-hypothesis discipline, Border House belonging, family-letter scenes and emotional contrast between ordinary life and mystery. No substantive rewrites justified. Audit commit: 7daf2b7dfeddf1255c0dcfb6f1d0e6e0448d3054.
+
+B23 update: chapters 13–22 emotionally audited. Checked festival/belonging, uncertainty and trust, Alex/Maya joint investigation, Alex's calculation error, consequences of the first violation, punishment, friendship conflict, Adrian's independent evidence, Leo's social-source role, and Alex's changed response to a wrong conclusion. No substantive rewrites justified. Audit commit: 78c2fae2908d4470627b57a7fe6c0fbfa5e68e67.

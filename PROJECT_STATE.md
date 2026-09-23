@@ -143,3 +143,25 @@ B25 завершён на 100%. Финальный production checklist закр
 - проверено: 37 spine-элементов (36 глав + эпилог), отсутствующих файлов по spine — 0
 - EPUB ZIP integrity: OK
 - исправленный файл: `world-blockbuster-russian-fixed.epub`
+
+
+## EPUB production — final cover integration
+
+После получения русской обложки 23.09.2026 выполнена финальная локальная сборка EPUB.
+
+- Обложка: 1024×1536 PNG, SHA-256 `a1e6ea378a5150e05f640a6c11b8a4a2b174477f0e2aaf6c5c5bde019161c2ad`.
+- Финальный локальный EPUB: `world-blockbuster-russian-final.epub`.
+- SHA-256 EPUB: `d4a35104eef8c3a4db97cd7c33d2515485b20745a8bd4b6a968bea8fc464471b`.
+- Встроена отдельная cover XHTML-страница.
+- Cover зарегистрирован в OPF как `cover-image`.
+- Spine: 38 элементов = cover + 36 глав + эпилог.
+- Отсутствующие spine-файлы: 0.
+- Raw Markdown headings в XHTML: 0.
+- Пустые end-параграфы: 0.
+- ZIP integrity: OK.
+- EPUBCheck пока не запускался; поэтому файл не маркируется как EPUBCheck-certified.
+
+Workflow очистки EPUB сохранён в GitHub:
+`3e9360628e1980a6b43c9c5e22590152bedc18f5`.
+
+B25 остаётся 100%: текстовый QA завершён; EPUB с обложкой собран и проверен структурно.
